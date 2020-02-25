@@ -1,0 +1,50 @@
+pre {
+  background: #f7f7f7;
+  padding: 1rem;
+  border-left: 10px solid #e6e6e6;
+}
+
+.article p,
+.article ul,
+.article ol {
+  font-size: 16px;
+  line-height: 1.9rem;
+  margin-bottom: 2rem;
+}
+
+.article ul p,
+.article ol p,
+.article li ol,
+.article li ul {
+  margin-bottom: 0;
+}
+
+ol {
+  padding-left: 1.25rem;
+}
+
+a[class*="col-"].text-dark h3 {
+  transition: all 0.3s ease;
+  background-repeat: repeat-x;
+  background-position: 0 120%;
+  background-size: 15px 70%;
+  display: inline;
+}
+
+a[class*="col-"].text-dark:hover {
+  text-decoration: none;
+}
+
+a[class*="col-"].text-dark:hover h3 {
+  color: var(--danger);
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' fill='%23ffeded'/%3E%3C/svg%3E ");
+}
+
+.featured__image {
+  height: 300px !important;
+}
+
+figcaption {
+  font-family: Eczar, serif;
+  font-weight: 400;
+}
