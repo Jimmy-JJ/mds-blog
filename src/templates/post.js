@@ -32,17 +32,3 @@ export default ({ data }) => {
     </Layout>
   );
 };
-export const query = graphql`
-  query($slug: String!) {
-    Blog {
-      postWithId(slug: $slug) {
-        _id
-        title
-        content
-        image
-        category
-        createdAt
-      }
-    }
-  }
-`;

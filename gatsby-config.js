@@ -79,6 +79,12 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      resolve: "gatsby-plugin-apollo",
+      options: {
+        uri: "https://motionwares-hire-api.appspot.com/graphql"
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

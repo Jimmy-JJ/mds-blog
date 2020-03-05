@@ -7,6 +7,9 @@ var plugins = [{
     },{
       plugin: require('/home/anisa/Desktop/mds-blog/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
       options: {"plugins":[],"fonts":[{"family":"Eczar","variants":["400","700","800"]},{"family":"Montserrat","variants":["400","600","700","900"]}]},
+    },{
+      plugin: require('/home/anisa/Desktop/mds-blog/node_modules/gatsby-plugin-apollo/gatsby-ssr'),
+      options: {"plugins":[],"uri":"https://motionwares-hire-api.appspot.com/graphql"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
