@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-
 import { useQuery } from "@apollo/react-hooks";
 import Moment from "react-moment";
 import gql from "graphql-tag";
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
@@ -29,14 +27,25 @@ const News = props => {
 
   if (loading) {
     return (
-      <div className="lead text-center d-flex justify-content-center align-items-center py-5 my-5">
-        Loading...
-      </div>
+      <Layout>
+        <SEO title="Collections" />
+        <div className="min-vh-100 lead text-center d-flex justify-content-center align-items-center">
+          <h4>Loading...</h4>
+        </div>
+      </Layout>
     );
   }
 
   if (error) {
-    return <h2>Error fetch post</h2>;
+    console.log(error);
+    return (
+      <Layout>
+        <SEO title="Collections" />
+        <div className="min-vh-100 lead text-center d-flex justify-content-center align-items-center">
+          <h4>Error fetching post</h4>;
+        </div>
+      </Layout>
+    );
   }
 
   return (

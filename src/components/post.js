@@ -46,16 +46,16 @@ const Post = props => {
         </div>
 
         {data.postWithId.image && (
-          <figure className="col-12 px-0 px-sm-4 pb-5 text-center">
+          <figure className="col-12 px-0  px-sm-4 pb-4 text-center">
             <img className="img-fluid" src={data.postWithId.image} />
-            <figcaption className="mt-3 text-secondary">
+            <figcaption className="mt-0 text-secondary">
               Image courtesy of Cezer.
             </figcaption>
           </figure>
         )}
 
         <div className="w-100" />
-        <div className="col-12 col-sm-10 col-lg-8 col-xl-7 mx-auto">
+        <div className="container-fluid col-12 col-sm-10 col-lg-8 col-xl-10 px-0">
           {data.postWithId.content}
         </div>
       </div>

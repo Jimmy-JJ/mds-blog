@@ -1,10 +1,10 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React, { useState } from "react"
-import logo from "../images/logo-circle.svg"
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
+import logo from "../images/logo-circle.svg";
 
 const Header = ({ siteTitle }) => {
-  const [collapsed, setCollapse] = useState(true)
+  const [collapsed, setCollapse] = useState(true);
   return (
     <>
       <section className="py-3 d-none d-sm-block"></section>
@@ -54,15 +54,15 @@ const Header = ({ siteTitle }) => {
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  siteTitle: PropTypes.string
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  siteTitle: ``
+};
 
-export default Header
+export default Header;

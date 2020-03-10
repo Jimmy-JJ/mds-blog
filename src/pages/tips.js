@@ -30,14 +30,25 @@ const Tips = props => {
 
   if (loading) {
     return (
-      <div className="lead text-center d-flex justify-content-center align-items-center py-5 my-5">
-        Loading...
-      </div>
+      <Layout>
+        <SEO title="Collections" />
+        <div className="min-vh-100 lead text-center d-flex justify-content-center align-items-center">
+          <h4>Loading...</h4>
+        </div>
+      </Layout>
     );
   }
 
   if (error) {
-    return <h2>Error fetch post</h2>;
+    console.log(error);
+    return (
+      <Layout>
+        <SEO title="Collections" />
+        <div className="min-vh-100 lead text-center d-flex justify-content-center align-items-center">
+          <h4>Error fetching post</h4>;
+        </div>
+      </Layout>
+    );
   }
 
   // ============================
@@ -59,7 +70,7 @@ const Tips = props => {
                   <img
                     alt={post.title}
                     src={post.image}
-                    className="featured__image mb-3 px-4 border w-100"
+                    className="featured__image mb-3 border w-100"
                   />
                 )}
                 <p className="text-caption mb-2 text-danger font-weight-semibold">

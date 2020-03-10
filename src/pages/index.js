@@ -1,10 +1,11 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
+import React, { useEffect } from "react";
+import { Link } from "gatsby";
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Moment from "react-moment";
+import LazyloadImage from "../config/lazyLoad";
 
 /**
  * React (A library for building UI)
@@ -36,16 +37,23 @@ export default () => {
   if (error) {
     console.log(error);
     return (
-      <div className="container text-center h-100">
-        <h4>Error fetching post</h4>;
-      </div>
+      <Layout>
+        <SEO title="Collections" />
+        <div className="min-vh-100 lead text-center d-flex justify-content-center align-items-center">
+          <h4>Error fetching post</h4>;
+        </div>
+      </Layout>
     );
   }
+
   if (loading) {
     return (
-      <div className="lead text-center d-flex justify-content-center align-items-center py-5 my-5">
-        Loading...
-      </div>
+      <Layout>
+        <SEO title="Collections" />
+        <div className="min-vh-100 lead text-center d-flex justify-content-center align-items-center">
+          <h4>Loading...</h4>
+        </div>
+      </Layout>
     );
   }
 
@@ -67,10 +75,22 @@ export default () => {
                 className="col-12 col-sm-4 pb-5 text-dark"
               >
                 {post.image && (
-                  <img
-                    alt={post.title}
+                  // <img
+                  //   alt={post.title}
+                  //   data-src={post.image}
+                  //   className="featured__image mb-3 border w-100 lazy"
+                  // />
+
+                  <LazyloadImage
                     src={post.image}
-                    className="featured__image mb-3 border w-100"
+                    alt={post.title}
+                    // widthPx={400}
+                    // srcsetSizes={[
+                    //   { imageWidth: 400, viewPortWidth: 992 },
+                    //   { imageWidth: 300, viewPortWidth: 768 },
+                    //   { imageWidth: 200, viewPortWidth: 500 }
+                    // ]}
+                    className="featured__image mb-3 border w-100 lazy"
                   />
                 )}
                 <p className="text-caption mb-2 text-danger font-weight-semibold">
@@ -90,35 +110,6 @@ export default () => {
     </Layout>
   );
 };
-
-// export const query = graphql`
-//   query {
-//     allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
-//       totalCount
-//       edges {
-//         node {
-//           id
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             title
-//             date(formatString: "DD MMMM, YYYY")
-//             tags
-//             featuredImage {
-//               childImageSharp {
-//                 fluid {
-//                   ...GatsbyImageSharpFluid
-//                 }
-//               }
-//             }
-//           }
-//           excerpt
-//         }
-//       }
-//     }
-//   }
-// `;
 
 // export const Query = graphql`
 //   query {

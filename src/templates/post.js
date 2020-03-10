@@ -24,7 +24,7 @@ export default ({ data }) => {
             </figcaption>
           </figure>
           <div className="w-100" />
-          <div className="col-12 col-sm-10 col-lg-8 col-xl-7 mx-auto">
+          <div className="col-12 col-sm-10 col-lg-8 col-xl-7 px-0">
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
         </div>
