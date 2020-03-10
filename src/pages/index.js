@@ -5,7 +5,7 @@ import gql from "graphql-tag";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Moment from "react-moment";
-import LazyloadImage from "../config/lazyLoad";
+import LazyImage from "../components/LazyImage";
 
 /**
  * React (A library for building UI)
@@ -81,16 +81,10 @@ export default () => {
                   //   className="featured__image mb-3 border w-100 lazy"
                   // />
 
-                  <LazyloadImage
+                  <LazyImage
                     src={post.image}
                     alt={post.title}
-                    // widthPx={400}
-                    // srcsetSizes={[
-                    //   { imageWidth: 400, viewPortWidth: 992 },
-                    //   { imageWidth: 300, viewPortWidth: 768 },
-                    //   { imageWidth: 200, viewPortWidth: 500 }
-                    // ]}
-                    className="featured__image mb-3 border w-100 lazy"
+                    className="featured__image mb-3 border w-100"
                   />
                 )}
                 <p className="text-caption mb-2 text-danger font-weight-semibold">

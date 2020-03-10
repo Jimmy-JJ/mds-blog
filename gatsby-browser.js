@@ -3,7 +3,14 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
+import LazyLoad from "vanilla-lazyload";
 
-// You can delete this file if you're not using it
+const lazyloadConfig = {
+  elements_selector: ".lazy"
+};
+
+// if (!document.lazyLoadInstance) {
+//   document.lazyLoadInstance = new LazyLoad(lazyloadConfig);
+// }
 
 export { wrapRootElement } from "./src/apollo/wrap-root-element";

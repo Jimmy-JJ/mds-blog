@@ -10,6 +10,9 @@ var plugins = [{
     },{
       plugin: require('/home/anisa/Desktop/mds-blog/node_modules/gatsby-plugin-apollo/gatsby-ssr'),
       options: {"plugins":[],"uri":"https://motionwares-hire-api.appspot.com/graphql"},
+    },{
+      plugin: require('/home/anisa/Desktop/mds-blog/gatsby-ssr'),
+      options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
